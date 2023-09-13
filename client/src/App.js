@@ -7,7 +7,7 @@ import { javascript } from "@codemirror/lang-javascript";
 import ReactMarkdown from 'react-markdown'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-let baseUrl = "http://localhost:4000"
+let baseUrl = "https://good-puce-crow-yoke.cyclic.app"
 
 function App() {
   const onChange = React.useCallback((value, viewUpdate) => {

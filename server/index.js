@@ -81,10 +81,10 @@ app.post("/quality",async(req,res)=>{
            }
            else{
       const completion = await openai.chat.completions.create({
-        messages: [{ role: 'user', content: `check the quality of the  following code.
+        messages: [{ role: 'user', content: `Identitify the following code and it's language , check the quality of the  following code.
         give me an assessment of the code's quality (such as commentary on style, how its organised, potential improvements, etc.) 
         then tell me how I can improve my code , then  remove all 
-        errors from code and give me the bug free code
+        errors from code and give me the bug free code in the same language
         at last rate the code quality on a scale of 10 points.
         
         ,
