@@ -17,13 +17,13 @@ app.get("/",async(req,res)=>{
 })
 app.post("/convert",async(req,res)=>{
     try {
-      if(!req.body.code){
+      if(!req.body.code || req.body.code.trim()=="//enter your code here"){
        res.send( {
             role: "assistant",
             content : "oops you wrote nothing!!!"
           })
       }
-      if(!req.body.language){
+      else if(!req.body.language){
        res.send( {
             role: "assistant",
             content : "please select a language to proceed !!!"
@@ -47,7 +47,7 @@ app.post("/convert",async(req,res)=>{
 })
 app.post("/debug",async(req,res)=>{
     try {
-        if(!req.body.code){
+        if(!req.body.code || req.body.code.trim()=="//enter your code here"){
             res.send( {
                  role: "assistant",
                  content : "oops you wrote nothing!!!"
@@ -55,7 +55,7 @@ app.post("/debug",async(req,res)=>{
            }
            else{
       const completion = await openai.chat.completions.create({
-        messages: [{ role: 'user', content: `Debug the following code as a senior software developer
+        messages: [{ role: 'user', content: `Debug the following code effectively.
         find out errors and list them, then tell me how I can improve my code , then at last remove all 
         errors from code and give me the bug free code,
          code : ${req.body.code}` }],
@@ -73,7 +73,7 @@ app.post("/debug",async(req,res)=>{
 })
 app.post("/quality",async(req,res)=>{
     try {
-        if(!req.body.code ){
+        if(!req.body.code || req.body.code.trim()=="//enter your code here"){
             res.send( {
                  role: "assistant",
                  content : "oops you wrote nothing!!!"
@@ -103,7 +103,7 @@ app.post("/quality",async(req,res)=>{
 })
 app.post("/run",async(req,res)=>{
     try {
-        if(!req.body.code){
+        if(!req.body.code || req.body.code.trim()=="//enter your code here"){
             res.send( {
                  role: "assistant",
                  content : "oops you wrote nothing!!!"
