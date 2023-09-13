@@ -85,7 +85,7 @@ app.post("/quality",async(req,res)=>{
         give me an assessment of the code's quality (such as commentary on style, how its organised, potential improvements, etc.) 
         then tell me how I can improve my code , then  remove all 
         errors from code and give me the bug free code in the same language
-        at last rate the code quality on a scale of 10 points. Try to provide your response in form of pointers
+        at last rate the code quality on a scale of 10 points. Try to provide your response in form of pointers in markdown language
         
         ,
          code : ${req.body.code}` }],
