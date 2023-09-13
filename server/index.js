@@ -23,9 +23,15 @@ app.post("/convert",async(req,res)=>{
             content : "oops you wrote nothing!!!"
           })
       }
+      if(!req.body.language){
+       res.send( {
+            role: "assistant",
+            content : "please select a language to proceed !!!"
+          })
+      }
       else{
         const completion = await openai.chat.completions.create({
-            messages: [{ role: 'user', content: `Hi convert the following code to python , code : ${req.body.code}` }],
+            messages: [{ role: 'user', content: `Hi convert the following code to ${req.body.language} , code : ${req.body.code}` }],
             model: 'gpt-3.5-turbo',
           });
           
@@ -67,7 +73,7 @@ app.post("/debug",async(req,res)=>{
 })
 app.post("/quality",async(req,res)=>{
     try {
-        if(!req.body.code){
+        if(!req.body.code ){
             res.send( {
                  role: "assistant",
                  content : "oops you wrote nothing!!!"
