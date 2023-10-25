@@ -1,4 +1,4 @@
-<h1 align="center">🛠️ Codecraft</h1>
+<h1 align="center">💻 Codecraft</h1>
 
 <p align="center">
   A seamless code conversion and analysis tool, accessible to everyone.
